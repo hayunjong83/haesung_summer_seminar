@@ -1,0 +1,5 @@
+train: /content/data/train/images
+val: /content/data/validation/images
+
+nc: 3
+names: ['Rumi', 'Mira', 'Zoey']
