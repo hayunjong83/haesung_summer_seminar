@@ -17,6 +17,10 @@ counter = solutions.ObjectCounter(
 # 자동자의 개수를 센다.
 results = counter(img)
 
+# 파악한 객체의 개수는 results.total_tracks로 알 수 있다.
+cv2.putText(results.plot_im, f"car number : {results.total_tracks}", 
+            (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 3)
+
 # 결과이미지에서 사람(0번 클래스)은 블러 처리한다.
 blurrer = solutions.ObjectBlurrer(
   show =False,        # OpenCV로 직접 화면에 띄우기 위해 False
