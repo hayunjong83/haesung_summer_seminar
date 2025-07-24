@@ -24,7 +24,6 @@ blurrer = solutions.ObjectBlurrer(
   classes = [0],
   show_conf = False,
   show_labels = False,
-  verbose = False
 )
 
 # 이번에서는 자동차 개수를 센 결과이미지를 입력한다.
