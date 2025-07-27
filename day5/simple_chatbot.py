@@ -24,7 +24,7 @@ if prompt := st.chat_input("무엇이든 물어보랏"):
     {"role": "user", "content": prompt})
   
   # 챗봇은 사용자 입력을 반복한다고 가정한다.
-  bot_response = f"Echo : {prompt}"
+  bot_response = f"질문을 반복하는 답변 : {prompt}"
   with st.chat_message("assistant"):
     st.markdown(bot_response)
 
