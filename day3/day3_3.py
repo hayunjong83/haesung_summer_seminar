@@ -2,11 +2,19 @@
 from ultralytics import solutions
 import cv2
 
-counter = solutions.ObjectCounter(
+counter = solutions.RegionCounter(
   show=True,
-  model="yolo11s.pt",
+  model="yolo11l.pt",
   classes = [0],
-  region=[(180, 240), (250, 240)],     # 관찰할 영역을 지정한다.
+  # 단일 영역 설정시
+  # region = [(210, 150), (300, 150), (300, 220), (210, 220)],
+  # 다중 영역 설정시
+  region= {
+    "region-01": [(210, 150), (300, 150), (300, 220), (210, 220)],
+    "region-02": [(350, 180), (430, 180), (430, 230), (350, 230)],
+  },
+  show_conf = False,
+  show_labels = False
 )
 
 # 분석할 비디오 영상 경로를 입력한다.
@@ -19,7 +27,7 @@ w = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
 h = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
 
 # 분석된 영상을 저장하기 위한 설정
-result_path = "cctv1_result.mp4"
+result_path = "cctv1_result2.mp4"
 fourcc = cv2.VideoWriter_fourcc(*'mp4v')
 out = cv2.VideoWriter(result_path, fourcc, fps, (w, h))
 
