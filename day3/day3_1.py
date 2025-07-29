@@ -16,10 +16,11 @@ image_path = "image1.jpg"
 img = cv2.imread(image_path)
 # results = model(image_path)
 results = counter(img)
-print(results)
+
 # 실행결과를 저장한다.
 # results.save("result2.jpg")
 cv2.imwrite("results2.jpg", results.plot_im)
+print(f"탐색된 객체의 수 {results}")
 
 # 결과 이미지를 화면에 띄워본다.
 # img = results.plot()
